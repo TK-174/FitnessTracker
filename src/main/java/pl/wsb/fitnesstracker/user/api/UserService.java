@@ -14,4 +14,22 @@ public interface UserService {
      */
     User createUser(User user);
 
+    /**
+     * Deletes the user identified by the given ID.
+     *
+     * @param userId ID of the user to delete
+     * @throws UserNotFoundException if no user with this ID exists
+     */
+    void deleteUser(Long userId);
+
+    /**
+     * Replaces all fields of the user identified by {@code userId} with the data from {@code userDto}.
+     *
+     * @param userId  ID of the user to update
+     * @param userDto new field values
+     * @return the updated user
+     * @throws UserNotFoundException if no user with this ID exists
+     */
+    User updateUser(Long userId, UserDto userDto);
+
 }
